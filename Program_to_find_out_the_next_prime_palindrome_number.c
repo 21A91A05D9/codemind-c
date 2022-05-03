@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+    int n,t,i,r,s=0,j,c;
+    scanf("%d",&n);
+    for(i=n+1;;i++)
+    {
+        t=i;
+        s=0;
+        while(t)
+        {
+           r=t%10;
+           s=(s*10)+r;
+           t=t/10;
+        }
+        if(s==i)
+        {
+            t=i;
+            c=0;
+            for(j=1;j<=t;j++)
+            {
+                if(t%j==0)
+                c++;
+            }
+            if(c==2)
+            {
+            printf("%d",i);
+            break;
+            }
+        }
+    }
+}
