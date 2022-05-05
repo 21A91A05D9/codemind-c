@@ -1,0 +1,44 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,a,t,r,ar[100],k=0,c,j,l,le=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        k=0;
+        c=0;
+        scanf("%d",&a);
+        t=a;
+        while(t)
+        {
+            r=t%10;
+            le++;
+            ar[k]=r;
+            k++;
+            t=t/10;
+        }
+        for(j=0;j<k;j++)
+        {
+            for(l=j+1;l<k;l++)
+            {
+               if(ar[j]>ar[l])
+               {
+                   t=ar[j];
+                   ar[j]=ar[l];
+                   ar[l]=t;
+               }
+            }
+        }
+        for(j=1;j<k;j++)
+        {
+            if(ar[j]-ar[j-1]==1)
+            c++;
+        }
+        if(c==k-1)
+        printf("YES
+");
+        else
+        printf("NO
+");
+    }
+}
